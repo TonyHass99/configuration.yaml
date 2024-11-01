@@ -1,0 +1,33 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: "My Home Assistant Instance"
+  # Location required to calculate the time the sun rises and sets
+  latitude: 37
+  longitude: -121
+  # 'metric' for Metric, 'us_customary' for US Customary
+  unit_system: us_customary
+  # Pick yours from here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: "America/Los_Angeles"
+  
+  customize: !include customize.yaml
+  automation: !include automation.yaml
+  zone: !include zone.yaml
+  sensor: !include sensor.yaml
+  switch: !include switch.yaml
+  device_tracker: !include device_tracker.yaml
+
+history:
+frontend:
+logbook:
+http:
+  api_password: "ImNotTelling!"
+
+ifttt:
+  key: ["nope"]
+
+mqtt:
+  sensor:
+    - name: "test sensor 1"
+      state_topic: "test/some_topic1"
+    - name: "test sensor 2"
+      state_topic: "test/some_topic2"
